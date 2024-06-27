@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: openvpn-server
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: OVPN_DATA
+        value: "/etc/openvpn"
+    ports:
+      - port: 1194
+        protocol: udp
+      - port: 8080
+        protocol: tcp
