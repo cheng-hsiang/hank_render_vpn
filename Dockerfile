@@ -15,7 +15,8 @@ RUN chmod +x /entrypoint.sh
 # Install Express
 RUN npm install express
 
-# Expose the HTTP server port
+# Expose the OpenVPN port and HTTP server port
+EXPOSE 1194/udp
 EXPOSE 3000
 
 ENTRYPOINT ["/entrypoint.sh"]
